@@ -7,18 +7,24 @@ if(canvas.getContext){
 const ctx=canvas.getContext("2d");
 
 ctx.beginPath();
+ctx.arc(300,200,100,0,Math.PI*2);
 
-ctx.moveTo(300,100);
-ctx.lineTo(420,300);
-ctx.lineTo(180,300);
-
-ctx.closePath();
-
-ctx.fillStyle="#3498db";
+ctx.fillStyle="#f4d03f";
 ctx.fill();
 
+ctx.strokeStyle="#b7950b";
 ctx.lineWidth=4;
-ctx.strokeStyle="#1f618d";
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(260,170,10,0,Math.PI*2);
+ctx.arc(340,170,10,0,Math.PI*2);
+ctx.fillStyle="black";
+ctx.fill();
+
+ctx.beginPath();
+ctx.arc(300,220,50,0,Math.PI);
+ctx.lineWidth=5;
 ctx.stroke();
 
 }
