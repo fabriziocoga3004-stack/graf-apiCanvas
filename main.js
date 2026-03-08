@@ -6,25 +6,20 @@ if(canvas.getContext){
 
 const ctx=canvas.getContext("2d");
 
-ctx.beginPath();
-ctx.arc(300,200,100,0,Math.PI*2);
+ctx.lineWidth=6;
 
-ctx.fillStyle="#f4d03f";
-ctx.fill();
-
-ctx.strokeStyle="#b7950b";
-ctx.lineWidth=4;
-ctx.stroke();
+ctx.strokeStyle="#e74c3c";
 
 ctx.beginPath();
-ctx.arc(260,170,10,0,Math.PI*2);
-ctx.arc(340,170,10,0,Math.PI*2);
-ctx.fillStyle="black";
-ctx.fill();
+ctx.moveTo(100,100);
+ctx.lineTo(500,100);
 
-ctx.beginPath();
-ctx.arc(300,220,50,0,Math.PI);
-ctx.lineWidth=5;
+ctx.moveTo(100,200);
+ctx.lineTo(500,200);
+
+ctx.moveTo(100,300);
+ctx.lineTo(500,300);
+
 ctx.stroke();
 
 }
