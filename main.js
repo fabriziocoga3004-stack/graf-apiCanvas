@@ -1,26 +1,44 @@
 function draw(){
 
-const canvas=document.getElementById("canvas");
+const canvas = document.getElementById("canvas");
 
 if(canvas.getContext){
 
-const ctx=canvas.getContext("2d");
+const ctx = canvas.getContext("2d");
 
-ctx.lineWidth=6;
+ctx.lineWidth = 5;
 
-ctx.strokeStyle="#e74c3c";
+/* ARCO 1 */
 
-ctx.beginPath();
-ctx.moveTo(100,100);
-ctx.lineTo(500,100);
+ctx.beginPath()
 
-ctx.moveTo(100,200);
-ctx.lineTo(500,200);
+/* lado izquierdo */
+ctx.moveTo(150,300)
+ctx.lineTo(150,180)
 
-ctx.moveTo(100,300);
-ctx.lineTo(500,300);
+/* arco superior */
+ctx.arc(220,180,70,Math.PI,0)
 
-ctx.stroke();
+/* lado derecho */
+ctx.lineTo(290,300)
+
+ctx.strokeStyle = "#2c3e50"
+ctx.stroke()
+
+
+/* ARCO 2 */
+
+ctx.beginPath()
+
+ctx.moveTo(350,300)
+ctx.lineTo(350,180)
+
+ctx.arc(420,180,70,Math.PI,0)
+
+ctx.lineTo(490,300)
+
+ctx.strokeStyle = "#e74c3c"
+ctx.stroke()
 
 }
 
