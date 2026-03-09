@@ -6,39 +6,54 @@ if(canvas.getContext){
 
 const ctx = canvas.getContext("2d");
 
-ctx.lineWidth = 5;
+/* puntos de la curva */
 
-/* ARCO 1 */
-
-ctx.beginPath()
-
-/* lado izquierdo */
-ctx.moveTo(150,300)
-ctx.lineTo(150,180)
-
-/* arco superior */
-ctx.arc(220,180,70,Math.PI,0)
-
-/* lado derecho */
-ctx.lineTo(290,300)
-
-ctx.strokeStyle = "#2c3e50"
-ctx.stroke()
+const p1 = {x:100, y:300};
+const p2 = {x:300, y:80};
+const p3 = {x:500, y:300};
 
 
-/* ARCO 2 */
+/* dibujar lineas guia (triangulo) */
 
-ctx.beginPath()
+ctx.beginPath();
+ctx.moveTo(p1.x,p1.y);
+ctx.lineTo(p2.x,p2.y);
+ctx.lineTo(p3.x,p3.y);
 
-ctx.moveTo(350,300)
-ctx.lineTo(350,180)
+ctx.strokeStyle="#f39c12";
+ctx.lineWidth=2;
+ctx.stroke();
 
-ctx.arc(420,180,70,Math.PI,0)
 
-ctx.lineTo(490,300)
+/* dibujar curva bezier */
 
-ctx.strokeStyle = "#e74c3c"
-ctx.stroke()
+ctx.beginPath();
+ctx.moveTo(p1.x,p1.y);
+
+ctx.quadraticCurveTo(
+p2.x,p2.y,
+p3.x,p3.y
+);
+
+ctx.strokeStyle="#e74c3c";
+ctx.lineWidth=4;
+ctx.stroke();
+
+
+/* dibujar puntos */
+
+function punto(x,y,color){
+
+ctx.beginPath();
+ctx.arc(x,y,6,0,Math.PI*2);
+ctx.fillStyle=color;
+ctx.fill();
+
+}
+
+punto(p1.x,p1.y,"blue");
+punto(p2.x,p2.y,"orange");
+punto(p3.x,p3.y,"blue");
 
 }
 
